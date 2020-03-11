@@ -49,13 +49,22 @@ clean-test: ## remove test and coverage artifacts
 
 lint: ## check style with flake8
 	flake8 {{ cookiecutter.project_slug }} tests
+	black --line-length=79 --check . 
+	isort --check-only
+	pylint **/*.py
+
+lint-watch:
+	while true; do clear; fswatch -o . | make lint; done
 
 test: ## run tests quickly with the default Python
 {%- if cookiecutter.use_pytest == 'y' %}
 	pytest
 {%- else %}
-	python setup.py test
+	python -m unittest **/*.py
 {%- endif %}
+
+test-watch:
+	while true; do clear; fswatch -o . | make test; done
 
 test-all: ## run tests on every Python version with tox
 	tox
