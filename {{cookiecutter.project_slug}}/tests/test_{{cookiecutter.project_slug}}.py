@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# flake8: noqa
+# pylint: skip-file
 
 """Tests for `{{ cookiecutter.project_slug }}` package."""
 

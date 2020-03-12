@@ -1,4 +1,6 @@
 """Console script for {{cookiecutter.project_slug}}."""
+# flake8: noqa
+# pylint: skip-file
 
 {%- if cookiecutter.command_line_interface|lower == 'argparse' %}
 import argparse

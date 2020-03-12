@@ -1,10 +1,18 @@
+- Install dependencies with:
+
+```poetry install```
+
+- Run black initially
+
+```black --line-length=79 .```
+
+- Make sure `make lint` and `make test` execute with no issues.
+
 - Install pre-commit hook with:
 
 ```pre-commit install```
 
-- Install dependencies with:
 
-```poetry install```
 
 {% set is_open_source = cookiecutter.open_source_license != 'Not open source' -%}
 {% for _ in cookiecutter.project_name %}={% endfor %}

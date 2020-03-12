@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# pylint: skip-file
+# flake8: noqa
 #
 # {{ cookiecutter.project_slug }} documentation build configuration file, created by
 # sphinx-quickstart on Fri Jun  9 13:47:02 2017.
@@ -21,7 +23,7 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
 
-import {{ cookiecutter.project_slug }}
+import {{ cookiecutter.project_slug }}  # isort:skip
 
 # -- General configuration ---------------------------------------------
 
@@ -157,6 +159,5 @@ texinfo_documents = [
      'One line description of project.',
      'Miscellaneous'),
 ]
-
 
 
